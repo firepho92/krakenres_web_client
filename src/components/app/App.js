@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../header/Header'
+import Main from '../main/Main'
+import Login from '../login/Login'
 import './App.css'
 
 class App extends Component {
@@ -16,6 +18,7 @@ class App extends Component {
     return (
       <app>
         <Header cajero = {this.state.cajero}/>
+        {cajero != null ? <Main/> : <Login/>}
       </app>
     );
   }
