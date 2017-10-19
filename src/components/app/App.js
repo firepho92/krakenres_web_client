@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <app>
         <Header cajero = {this.state.cajero}/>
-        {cajero != null ? <Main/> : <Login/>}
+        {this.state.cajero != null ? <Main/> : <Login/>}
       </app>
     );
   }
