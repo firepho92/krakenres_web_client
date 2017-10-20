@@ -13,13 +13,21 @@ class App extends Component {
       meseros: null,
       cajero: null
     }
+    this.handleLogin = this.handleLogin.bind(this)
   }
+
+  handleLogin(user){
+    this.setState({
+      cajero: user[0]
+    })
+  }
+
   render() {
     return (
-      <app>
+      <div>
         <Header cajero = {this.state.cajero}/>
-        {this.state.cajero != null ? <Main/> : <Login/>}
-      </app>
+        {this.state.cajero != null ? <Main/> : <Login handleLogin = {this.handleLogin}/>}
+      </div>
     );
   }
 }
