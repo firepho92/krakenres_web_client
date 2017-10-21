@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
+import {Container, Row, Col, Button, Form, FormGroup, Input} from 'reactstrap'
 
 class Home extends Component {
 
   render() {
     return (
-      <home>
-        home
-      </home>
+      <div>
+      </div>
     );
   }
 }

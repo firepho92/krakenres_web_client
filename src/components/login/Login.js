@@ -10,6 +10,7 @@ class Login extends Component {
   }
 
   handleSubmit(event) {
+    // eslint-disable-next-line
     const user = new Promise((resolve, reject) => {
       resolve(login(this.user.value, this.password.value))
     })
@@ -29,24 +30,24 @@ class Login extends Component {
       <div>
         <Container>
           <Row className="justify-content-center login-container">
-            <Col className="align-self-center" sm="10" md="10" lg={{size: 8}}>
+            <Col className="align-self-center" sm="10" md="10" lg={{size: 6}}>
               <Form className="login-form" onSubmit={this.handleSubmit}>
-                <h2>Entrar</h2>
+                <h3 className="login-title">Ingresa tus datos</h3>
                 <FormGroup>
                   <label className="sr-only">Usuario</label>
-                  <div className="input-group mb-2 mb-sm-0">
+                  <div className="input-group mb-2 mb-sm-0 text-input">
                     <div className="input-group-addon"><i className="fa fa-user-o" aria-hidden="true"></i></div>
-                    <input type="text" className="form-control" id="inlineFormInputGroup" placeholder="Usuario" ref={(input) => this.user = input}/>
+                    <input type="text" className="form-control" id="inlineFormInputGroup" placeholder="Usuario" autoComplete="off" ref={(input) => this.user = input}/>
                   </div>
                 </FormGroup>
                 <FormGroup>
                   <label className="sr-only">Contraseña</label>
-                  <div className="input-group mb-2 mb-sm-0">
+                  <div className="input-group mb-2 mb-sm-0 text-input">
                     <div className="input-group-addon"><i className="fa fa-lock" aria-hidden="true"></i></div>
-                    <input type="password" className="form-control" id="inlineFormInputGroup" placeholder="Contraseña" ref={(input) => this.password = input} />
+                    <input type="password" className="form-control" id="inlineFormInputGroup" placeholder="Contraseña" autoComplete="off" ref={(input) => this.password = input} />
                   </div>
                 </FormGroup>
-                <Button outline className="submit-btn">Entrar</Button>
+                <Button className="submit-btn">Entrar</Button>
               </Form>
             </Col>
           </Row>

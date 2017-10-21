@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import {Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap'
+import {Navbar, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap'
+import {Link} from 'react-router-dom'
 import Icon from './img/icon-48x48.png'
+import './Header.css'
 
 class Header extends Component {
   constructor(props) {
@@ -22,10 +24,10 @@ class Header extends Component {
     return (
       <div>
         <Navbar color="faded" light expand="md">
-          <NavbarBrand href="/">Krakenres <img src={Icon} alt="krakenres icon"/></NavbarBrand>
+          <Link to="/" className="navbar-brand">Krakenres <img src={Icon} alt="krakenres icon"/></Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            {this.props.cajero != null ? <LoggedIn cajero = {this.props.cajero}/> : <LogIn/>}
+            {this.props.cajero != null ? <LoggedIn handleLogout = {this.props.handleLogout}/> : <LogIn/>}
           </Collapse>
         </Navbar>
       </div>
@@ -33,38 +35,46 @@ class Header extends Component {
   }
 }
 
-const LoggedIn = ({cajero}) => (
-  <Nav className="ml-auto" navbar>
-    <NavItem>
-      <NavLink href="/components/">Barra</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href="/components/">Cocina</NavLink>
-    </NavItem>
-    <NavItem>
-      <NavLink href="/components/">Caja</NavLink>
-    </NavItem>
-    <NavItem>
-      <UncontrolledDropdown>
-        <DropdownToggle caret>
-          {cajero.nombre}
-        </DropdownToggle>
-        <DropdownMenu right>
-          <DropdownItem header>Header</DropdownItem>
-          <DropdownItem disabled>Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>Another Action</DropdownItem>
-        </DropdownMenu>
-      </UncontrolledDropdown>
-    </NavItem>
-  </Nav>
-)
+class LoggedIn extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <Nav className="ml-auto" navbar>
+        <NavItem>
+          <NavLink to="/Kitchen">Barra</NavLink>
+        </NavItem>
+        <NavItem>
+          <Link to="/cocina" className="nav-link">Cocina</Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/mesas" className="nav-link">Mesas</Link>
+        </NavItem>
+        <NavItem>
+          <UncontrolledDropdown>
+            <DropdownToggle caret>
+              {sessionStorage.getItem('cajero_nombre')}
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem header>Header</DropdownItem>
+              <DropdownItem disabled>Action</DropdownItem>
+              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem onClick={this.props.handleLogout}>Salir</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </NavItem>
+      </Nav>
+    );
+  }
+}
 
 const LogIn = () => (
   <Nav className="ml-auto" navbar>
     <NavItem>
-      <NavLink href="/">Entrar</NavLink>
+      <Link to="/" className="nav-link">Entrar</Link>
     </NavItem>
   </Nav>
 )

@@ -2,21 +2,14 @@
   height: 80vh;
 }
 
+.login-title{
+  color: #32325D;
+}
+
 .login-form{
   text-align: center;
   background-color: #FFF;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 2em;
-  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.16);
-}
-
-.submit-btn{
-  color: #313131 !important;
-  border-color: #313131 !important;
-}
-
-.submit-btn:hover{
-  color: #FFF !important;
-  background-color: #313131 !important;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.18);
 }

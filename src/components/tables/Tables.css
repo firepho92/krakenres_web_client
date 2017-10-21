@@ -1,0 +1,16 @@
+.select-input{
+    color: hsla(235, 71%, 65%, 1) !important;
+    background-color: #FFF !important;
+    border-color: #FFF !important;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.18);
+    transform: all 0.15s ease;
+}
+
+.select-input:hover{
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    -webkit-transform: translateY(-1px); 
+    -moz-transform: translateY(-1px); 
+    -ms-transform: translateY(-1px); 
+    -o-transform: translateY(-1px); 
+    transform: translateY(-1px); 
+  }
