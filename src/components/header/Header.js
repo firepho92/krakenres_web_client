@@ -22,23 +22,18 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar color="faded" light expand="md">
-          <Link to="/" className="navbar-brand">Krakenres <img src={Icon} alt="krakenres icon"/></Link>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            {this.props.cajero != null ? <LoggedIn handleLogout = {this.props.handleLogout}/> : <LogIn/>}
-          </Collapse>
-        </Navbar>
-      </div>
+      <Navbar color="faded" light expand="md" className="fixed-top">
+        <Link to="/" className="navbar-brand">Krakenres <img src={Icon} alt="krakenres icon"/></Link>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          {this.props.cajero != null ? <LoggedIn handleLogout = {this.props.handleLogout}/> : <LogIn/>}
+        </Collapse>
+      </Navbar>
     );
   }
 }
 
 class LoggedIn extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

@@ -1,0 +1,161 @@
+.card-wrapper{
+    margin-bottom: 2em;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all .15s ease;
+}
+
+.card{
+    height: 200px;
+    height: 200px;
+    background-color: #FFF;
+    border-radius: 0.10rem;
+    border: none !important;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.18);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.15s ease;
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    animation: fadeIn 0.8s 1;
+}
+
+@keyframes fadeIn {
+    0%   {opacity:0; top:-20px;}
+    30%  {opacity: 0; top: -20px;}
+    100% {opacity: 1; top: 0;}
+}
+
+@-webkit-keyframes fadeIn {
+    from   {opacity:0;}
+    to {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+    from   {opacity:0;}
+    to {opacity: 1;}
+}
+
+@-ms-keyframes fadeIn {
+    from   {opacity:0;}
+    to {opacity: 1;}
+}
+
+.card:hover{
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    -webkit-transform: translateY(-1px); 
+    -moz-transform: translateY(-1px); 
+    -ms-transform: translateY(-1px); 
+    -o-transform: translateY(-1px); 
+    transform: translateY(-1px); 
+}
+
+.card-title{
+    margin-top: 1em;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    text-align: center;
+    background-color: #FFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.18);
+    z-index: 2;
+}
+
+.card-zone{
+    color: #85919d;
+    font-size: 0.7em !important;
+}
+
+.card-body{
+    width: 100%;
+    height: 149px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.card-body-up{
+    z-index: 2;
+    background-color: #FFF;
+    transition: all 0.6s ease;
+}
+
+.card-body-down{
+    text-align: left;
+}
+
+.card:hover > .card-body-up{
+    -webkit-transform: translateY(200px); 
+    -moz-transform: translateY(-200px); 
+    -ms-transform: translateY(-200px); 
+    -o-transform: translateY(-200px); 
+    transform: translateY(200px);
+}
+
+.card-waiter-name{
+    margin: 20%;
+}
+
+.btn-card{
+    width: 40px;
+    height: 40px;
+    border: none;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 1.5em;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.18);
+    transition: all 0.6s ease;
+}
+
+.btn-add-items-order{
+    border: 1px solid #3ac084;
+    background-color: rgba(0,0,0,0);
+    color: #3ac084;
+    bottom: 12px;
+    right: 12px;
+}
+
+.btn-add-items-order:hover{
+    background-color: #3ac084;
+    color: #FFF;
+}    
+
+.btn-charge{
+    border: 1px solid #e27c29;
+    background-color: rgba(0,0,0,0);
+    color: #e27c29;
+    top: 12px;
+    right: 12px;
+}
+
+.btn-charge:hover{
+    background-color: #e27c29;
+    color: #FFF;
+}
+
+.btn-card:hover{
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    -webkit-transform: translateY(-1px); 
+    -moz-transform: translateY(-1px); 
+    -ms-transform: translateY(-1px); 
+    -o-transform: translateY(-1px); 
+    transform: translateY(-1px);
+}
+
+.btn-card:active{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.18);
+    -webkit-transform: translateY(1px); 
+    -moz-transform: translateY(1px); 
+    -ms-transform: translateY(1px); 
+    -o-transform: translateY(1px); 
+    transform: translateY(1px);
+}
+
+.btn-card:focus{
+    outline: none;
+}

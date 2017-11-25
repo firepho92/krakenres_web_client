@@ -1,6 +1,5 @@
 import axios from 'axios'
-
-const server = 'http://localhost:8000'
+import {server} from './config'
 
 export function getUser(user) {
   var request = axios.get(`${server}/usuarios/${user}`)
@@ -54,7 +53,7 @@ export function logout(user) {
 
   return request
   .then(res => {
-    console.log(res.data)
+    //console.log(res.data)
     return res.data
   })
   .catch(err => {
@@ -67,14 +66,9 @@ export function isLogged() {
 
   return request
   .then(res => {
-    console.log(res.data)
     return res.data
   })
   .catch(err => {
     console.log(err)
   })
-}
-
-export function getCajeros() {
-  var request = 
 }
